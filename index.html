@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Two Vertical Partitions</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+
+    .split {
+      display: flex;
+      height: 100vh;
+      width: 100vw;
+    }
+
+    .pane {
+      flex: 1 1 50%;
+      width: 50%;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .pane--left {
+      background: #1f2937;
+      color: #f9fafb;
+    }
+
+    .pane--right {
+      background: #f9fafb;
+      color: #1f2937;
+      border-left: 1px solid #d1d5db;
+    }
+
+    .pane h2 {
+      margin: 0 0 0.5rem;
+      font-size: 1.5rem;
+    }
+
+    .pane p {
+      margin: 0;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <main class="split">
+    <section class="pane pane--left" aria-label="Left partition">
+      <h2>Left</h2>
+      <p>50% width</p>
+    </section>
+    <section class="pane pane--right" aria-label="Right partition">
+      <h2>Right</h2>
+      <p>50% width</p>
+    </section>
+  </main>
+</body>
+</html>
