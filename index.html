@@ -16,13 +16,44 @@
     }
 
     body {
+      display: flex;
+      flex-direction: column;
       font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: #000;
     }
 
+    /* ---------- Header ---------- */
+    .site-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.75rem 1.5rem;
+      background: #000;
+      color: #f9fafb;
+      border-bottom: 1px solid #374151;
+    }
+
+    .site-header__logo {
+      height: 64px;
+      width: auto;
+      display: block;
+      flex: 0 0 auto;
+    }
+
+    .site-header__wordmark {
+      margin: 0;
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ---------- Split ---------- */
     .split {
       display: flex;
-      height: 100vh;
-      width: 100vw;
+      flex: 1 1 auto;
+      min-height: 0;
+      width: 100%;
     }
 
     .pane {
@@ -57,9 +88,32 @@
       margin: 0;
       opacity: 0.8;
     }
+
+    @media (max-width: 480px) {
+      .site-header {
+        padding: 0.5rem 1rem;
+      }
+
+      .site-header__logo {
+        height: 48px;
+      }
+
+      .site-header__wordmark {
+        font-size: 1.15rem;
+      }
+    }
   </style>
 </head>
 <body>
+  <header class="site-header">
+    <img
+      class="site-header__logo"
+      src="assets/viking-emblem.png"
+      alt="Monochrome Viking warrior emblem"
+    />
+    <h1 class="site-header__wordmark">Vikings Warriors</h1>
+  </header>
+
   <main class="split">
     <section class="pane pane--left" aria-label="Left partition">
       <h2>Left</h2>
