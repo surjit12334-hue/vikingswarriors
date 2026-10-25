@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Two Vertical Partitions</title>
+  <title>Vikings Warriors</title>
   <style>
     * {
       box-sizing: border-box;
@@ -54,25 +54,15 @@
     }
 
     .pane {
-      flex: 1 1 50%;
-      min-width: 0;
+      flex: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       padding: 2rem;
       text-align: center;
-    }
-
-    .pane--left {
       background: #1f2937;
       color: #f9fafb;
-    }
-
-    .pane--right {
-      background: #f9fafb;
-      color: #1f2937;
-      border-left: 1px solid #d1d5db;
     }
 
     .pane h2 {
@@ -111,13 +101,9 @@
   </header>
 
   <main class="split">
-    <section class="pane pane--left" aria-label="Left partition">
-      <h2>Left</h2>
-      <p>50% width</p>
-    </section>
-    <section class="pane pane--right" aria-label="Right partition">
-      <h2>Right</h2>
-      <p>50% width</p>
+    <section class="pane" aria-label="Content">
+      <h2>Content</h2>
+      <p>Full width</p>
     </section>
   </main>
 </body>
