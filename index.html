@@ -4,106 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vikings Warriors</title>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    html,
-    body {
-      height: 100%;
-      margin: 0;
-    }
-
-    body {
-      display: flex;
-      flex-direction: column;
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-      background: #000;
-    }
-
-    /* ---------- Header ---------- */
-    .site-header {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      padding: 0.75rem 1.5rem;
-      color: #f9fafb;
-      border-bottom: 1px solid #374151;
-    }
-
-    .site-header__logo {
-      height: 64px;
-      display: block;
-      flex: 0 0 auto;
-    }
-
-    .site-header__wordmark {
-      margin: 0;
-      font-size: 1.5rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    /* ---------- Split ---------- */
-    .split {
-      display: flex;
-      flex: 1 1 auto;
-      min-height: 0;
-    }
-
-    .pane {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
-      text-align: center;
-      background: #1f2937;
-      color: #f9fafb;
-    }
-
-    .pane h2 {
-      margin: 0 0 0.5rem;
-      font-size: 1.5rem;
-    }
-
-    .pane p {
-      margin: 0;
-      opacity: 0.8;
-    }
-
-    /* ---------- Footer ---------- */
-    .site-footer {
-      flex: 0 0 auto;
-      background: #000;
-      color: #f9fafb;
-      border-top: 1px solid #374151;
-      padding: 1rem 1.5rem;
-      text-align: center;
-      font-size: 0.875rem;
-    }
-
-    .site-footer p {
-      margin: 0;
-    }
-
-    @media (max-width: 480px) {
-      .site-header {
-        padding: 0.5rem 1rem;
-      }
-
-      .site-header__logo {
-        height: 48px;
-      }
-
-      .site-header__wordmark {
-        font-size: 1.15rem;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body>
   <header class="site-header">
@@ -116,14 +17,91 @@
   </header>
 
   <main class="split">
-    <section class="pane" aria-label="Content">
-      <h2>Content</h2>
-      <p>Full width</p>
+    <section class="pane pane--left" aria-label="Content">
+      <div class="cards">
+        <a class="card" href="about-us.html">
+          <h2>About Us</h2>
+          <p>Our story, values and the people behind the team.</p>
+        </a>
+        <a class="card" href="#contacts">
+          <h2>Contacts</h2>
+          <p>Get in touch with the club and the coaching staff.</p>
+        </a>
+        <a class="card" href="address.html">
+          <h2>Address</h2>
+          <p>Find our academy, get directions and see the map.</p>
+        </a>
+        <a class="card" href="#achievements">
+          <h2>Achievements</h2>
+          <p>Trophies, titles and milestones from our history.</p>
+        </a>
+        <a class="card" href="gallery.html">
+          <h2>Gallery</h2>
+          <p>Photos and highlights from matches and events.</p>
+        </a>
+        <a class="card" href="#players">
+          <h2>Players</h2>
+          <p>Meet the squad representing the Vikings Warriors.</p>
+        </a>
+      </div>
     </section>
+
+    <section class="pane pane--right" aria-hidden="true"></section>
   </main>
 
   <footer class="site-footer">
-    <p>&copy; 2026 Vikings Warriors. All rights reserved.</p>
+    <div class="site-footer__social">
+      <a
+        class="social-link social-link--instagram"
+        href="https://www.instagram.com/wcta_meerut_/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Vaikings Warriors Taekwondo Academy on Instagram"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.75"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+          <path
+            d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+          />
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+        </svg>
+      </a>
+      <a
+        class="social-link social-link--facebook"
+        href="https://www.facebook.com/ValiantTaekwondo"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Vaikings Warriors Taekwondo Academy on Facebook"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          stroke="none"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <path
+            d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4z"
+          />
+        </svg>
+      </a>
+    </div>
+    <p>&copy; 2026 Vikings Warriors.</p>
+    <address class="site-footer__address">
+      <span class="site-footer__address-line">
+        120/12, New Arya Nagar, Meerut, Uttar Pradesh 250004
+      </span>
+      <a class="site-footer__phone" href="tel:+917417797757">07417797757</a>
+    </address>
   </footer>
 </body>
 </html>

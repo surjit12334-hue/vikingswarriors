@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" role="img" aria-label="">
+  <defs>
+    <linearGradient id="base" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1626" />
+      <stop offset="0.55" stop-color="#080e1a" />
+      <stop offset="1" stop-color="#05070d" />
+    </linearGradient>
+
+    <radialGradient id="goldGlow" cx="0.82" cy="0.02" r="0.75">
+      <stop offset="0" stop-color="#e8c37a" stop-opacity="0.30" />
+      <stop offset="0.5" stop-color="#b98a2f" stop-opacity="0.10" />
+      <stop offset="1" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="tealGlow" cx="0.05" cy="1" r="0.8">
+      <stop offset="0" stop-color="#2dd4bf" stop-opacity="0.24" />
+      <stop offset="0.5" stop-color="#0e7490" stop-opacity="0.09" />
+      <stop offset="1" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="vignette" cx="0.5" cy="0.5" r="0.75">
+      <stop offset="0.45" stop-color="#000000" stop-opacity="0" />
+      <stop offset="1" stop-color="#000000" stop-opacity="0.65" />
+    </radialGradient>
+
+    <pattern id="slashes" width="46" height="46" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
+      <rect width="46" height="46" fill="none" />
+      <rect width="1.5" height="46" fill="#94a3b8" fill-opacity="0.07" />
+    </pattern>
+
+    <pattern id="hex" width="120" height="104" patternUnits="userSpaceOnUse">
+      <path d="M30 2 L90 2 L120 52 L90 102 L30 102 L0 52 Z"
+            fill="none" stroke="#94a3b8" stroke-opacity="0.05" stroke-width="1.2" />
+    </pattern>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#base)" />
+  <rect width="1600" height="1000" fill="url(#hex)" />
+  <rect width="1600" height="1000" fill="url(#slashes)" />
+
+  <!-- shield motif -->
+  <g transform="translate(1180 500)" fill="none" stroke="#e8c37a">
+    <path d="M0 -260 L210 -180 L210 40 C210 200 110 300 0 350 C-110 300 -210 200 -210 40 L-210 -180 Z"
+          stroke-opacity="0.16" stroke-width="2" />
+    <path d="M0 -205 L165 -140 L165 30 C165 165 85 245 0 282 C-85 245 -165 165 -165 30 L-165 -140 Z"
+          stroke-opacity="0.10" stroke-width="1.5" />
+    <path d="M-95 -120 L95 190 M95 -120 L-95 190" stroke-opacity="0.12" stroke-width="14" stroke-linecap="round" />
+  </g>
+
+  <circle cx="330" cy="180" r="240" fill="none" stroke="#2dd4bf" stroke-opacity="0.10" stroke-width="1.5" />
+  <circle cx="330" cy="180" r="330" fill="none" stroke="#2dd4bf" stroke-opacity="0.05" stroke-width="1.5" />
+
+  <rect width="1600" height="1000" fill="url(#goldGlow)" />
+  <rect width="1600" height="1000" fill="url(#tealGlow)" />
+  <rect width="1600" height="1000" fill="url(#vignette)" />
+</svg>

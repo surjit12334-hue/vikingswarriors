@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Placeholder portrait of the coach">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#374151"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+    <clipPath id="circle">
+      <circle cx="120" cy="120" r="120"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#circle)">
+    <rect width="240" height="240" fill="url(#bg)"/>
+    <circle cx="120" cy="96" r="40" fill="#6b7280"/>
+    <path d="M40 240c0-44 36-80 80-80s80 36 80 80z" fill="#6b7280"/>
+  </g>
+</svg>
