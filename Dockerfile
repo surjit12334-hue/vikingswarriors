@@ -8,7 +8,7 @@ COPY background.jpg /usr/share/nginx/html/
 
 # PORT-aware nginx config, written inline so no extra context file is needed.
 # The official nginx image runs envsubst on /etc/nginx/templates/*.template at startup.
-RUN printf '%s\n' \
+RUN mkdir -p /etc/nginx/templates && printf '%s\n' \
   'server {' \
   '    listen ${PORT};' \
   '    server_name _;' \
