@@ -46,7 +46,7 @@ body {
   text-rendering: optimizeLegibility;
   color: var(--text);
   background-color: var(--bg-0);
-  background-image: url("bg.svg");
+  background-image: url("../background.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -149,35 +149,24 @@ button:focus-visible {
   text-shadow: 0 0 34px rgba(232, 195, 122, 0.22);
 }
 
-/* ---------- Split ---------- */
-.split {
-  display: flex;
-  flex: 1 1 auto;
-  min-height: 0;
-}
-
-.pane {
+/* ---------- Home ---------- */
+.home {
   position: relative;
-  flex: 1 1 50%;
+  flex: 1 1 auto;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2.5rem 2rem;
-  text-align: center;
-  background: var(--panel);
+  padding: 3rem 1.5rem;
   color: var(--text);
   min-width: 0;
-}
-
-.pane--left {
-  border-right: 1px solid var(--line);
 }
 
 /* ---------- Cards ---------- */
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
+  grid-template-columns: repeat(auto-fit, 185px);
+  justify-content: center;
+  justify-items: center;
   align-items: start;
   gap: 1rem;
   width: 100%;
@@ -189,7 +178,10 @@ button:focus-visible {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 0.5rem;
+  width: 100%;
   padding: 1.35rem 1.25rem;
   background: var(--glass);
   backdrop-filter: blur(10px) saturate(125%);
@@ -198,7 +190,7 @@ button:focus-visible {
   border-radius: var(--radius);
   color: inherit;
   text-decoration: none;
-  text-align: left;
+  text-align: center;
   box-shadow: var(--shadow);
   transition: transform 0.28s var(--ease), border-color 0.28s ease,
     box-shadow 0.28s ease, background-color 0.28s ease;
@@ -278,6 +270,144 @@ button:focus-visible {
   font-size: 0.875rem;
   line-height: 1.55;
   color: var(--muted);
+}
+
+/* ---------- Animated card art ---------- */
+.card__art {
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  margin-bottom: 0.15rem;
+  animation: art-float 4.5s ease-in-out infinite;
+}
+
+.card__art--contacts { animation-delay: -0.7s; }
+.card__art--address { animation-delay: -1.4s; }
+.card__art--achievements { animation-delay: -2.1s; }
+.card__art--gallery { animation-delay: -2.8s; }
+.card__art--players { animation-delay: -3.5s; }
+
+.card__art svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  filter: drop-shadow(0 0 10px rgba(232, 195, 122, 0.18));
+}
+
+.card__art g,
+.card__art circle,
+.card__art path,
+.card__art rect {
+  transform-box: view-box;
+}
+
+@keyframes art-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes art-halo {
+  0%, 100% { transform: scale(1); opacity: 0.28; }
+  50% { transform: scale(1.1); opacity: 0.6; }
+}
+
+@keyframes art-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+@keyframes art-dot {
+  0%, 100% { transform: translateY(0); opacity: 0.5; }
+  50% { transform: translateY(-4px); opacity: 1; }
+}
+
+@keyframes art-wave {
+  0%, 100% { transform: scale(0.92); opacity: 0.25; }
+  50% { transform: scale(1.06); opacity: 1; }
+}
+
+@keyframes art-ripple {
+  0% { transform: scale(0.55); opacity: 0.9; }
+  100% { transform: scale(2.1); opacity: 0; }
+}
+
+@keyframes art-twinkle {
+  0%, 100% { transform: scale(0.8); opacity: 0.25; }
+  50% { transform: scale(1.15); opacity: 1; }
+}
+
+@keyframes art-sway {
+  0%, 100% { transform: rotate(-5deg) translateY(0); }
+  50% { transform: rotate(5deg) translateY(-2px); }
+}
+
+@keyframes art-kick {
+  0%, 100% { transform: rotate(0deg); }
+  45% { transform: rotate(-38deg); }
+  70% { transform: rotate(-18deg); }
+}
+
+@keyframes art-swoosh {
+  0%, 100% { transform: scale(0.9); opacity: 0; }
+  50% { transform: scale(1.05); opacity: 0.85; }
+}
+
+/* About Us — pulsing shield halo and bobbing member */
+.art-halo {
+  transform-origin: 32px 32px;
+  animation: art-halo 3s ease-in-out infinite;
+}
+
+.art-bob {
+  animation: art-bob 2.4s ease-in-out infinite;
+}
+
+/* Contacts — bouncing typing dots and signal waves */
+.art-dots circle:nth-child(1) { animation: art-dot 1.2s ease-in-out infinite; }
+.art-dots circle:nth-child(2) { animation: art-dot 1.2s ease-in-out infinite 0.15s; }
+.art-dots circle:nth-child(3) { animation: art-dot 1.2s ease-in-out infinite 0.3s; }
+
+.art-wave {
+  transform-origin: 51px 27px;
+  animation: art-wave 1.8s ease-in-out infinite;
+}
+
+.art-wave--2 {
+  transform-origin: 56px 27px;
+  animation-delay: -0.9s;
+}
+
+/* Address — location pin ripples */
+.art-ripple {
+  transform-origin: 32px 47px;
+  animation: art-ripple 2.4s ease-out infinite;
+}
+
+.art-ripple--delay { animation-delay: -1.2s; }
+
+/* Achievements — twinkling sparkles */
+.art-sparkles path:nth-child(1) { animation: art-twinkle 1.8s ease-in-out infinite; }
+.art-sparkles path:nth-child(2) { animation: art-twinkle 1.8s ease-in-out infinite -0.9s; }
+
+/* Gallery — fanned photo frames */
+.art-frame {
+  transform-origin: 32px 32px;
+  animation: art-sway 4s ease-in-out infinite;
+}
+
+.art-frame--mid { animation-delay: -1.3s; }
+.art-frame--front { animation-delay: -2.6s; }
+
+/* Players — rotating kick and motion swoosh */
+.art-kick {
+  transform-origin: 30px 32px;
+  animation: art-kick 1.9s ease-in-out infinite;
+}
+
+.art-swoosh {
+  transform-origin: 34px 40px;
+  animation: art-swoosh 1.9s ease-in-out infinite;
 }
 
 /* ---------- Inner page ---------- */
@@ -431,6 +561,7 @@ button:focus-visible {
 .coach-card {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 1.25rem;
   padding: 1.35rem;
   background: var(--glass);
@@ -470,8 +601,9 @@ button:focus-visible {
 .coach-card__body {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 0.25rem;
-  text-align: left;
+  text-align: center;
 }
 
 .coach-card__name {
@@ -503,6 +635,7 @@ button:focus-visible {
 .coach-card__achievements {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 0.4rem;
   margin: 0.8rem 0 0;
   padding: 0;
@@ -541,6 +674,7 @@ button:focus-visible {
 /* ---------- Address details ---------- */
 .address-card {
   padding: 1.6rem;
+  text-align: center;
   background: var(--glass);
   backdrop-filter: blur(10px) saturate(120%);
   -webkit-backdrop-filter: blur(10px) saturate(120%);
@@ -552,6 +686,7 @@ button:focus-visible {
 .address-card address {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 1.25rem;
   font-style: normal;
 }
@@ -983,6 +1118,28 @@ button:focus-visible {
   box-shadow: 0 12px 26px -14px rgba(24, 119, 242, 0.9);
 }
 
+.social-link--whatsapp {
+  color: #25d366;
+}
+
+.social-link--whatsapp:hover,
+.social-link--whatsapp:focus-visible {
+  border-color: rgba(37, 211, 102, 0.8);
+  box-shadow: 0 12px 26px -14px rgba(37, 211, 102, 0.9);
+}
+
+.button--whatsapp {
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  border-color: rgba(255, 255, 255, 0.22);
+  color: #fff;
+  box-shadow: 0 12px 26px -14px rgba(37, 211, 102, 0.8);
+}
+
+.button--whatsapp:hover,
+.button--whatsapp:focus-visible {
+  box-shadow: 0 16px 32px -14px rgba(37, 211, 102, 0.95);
+}
+
 .social-link--sm {
   width: 32px;
   height: 32px;
@@ -995,6 +1152,7 @@ button:focus-visible {
 
 .coach-card__socials {
   display: flex;
+  justify-content: center;
   gap: 0.5rem;
   margin-top: 0.85rem;
 }
@@ -1027,12 +1185,8 @@ button:focus-visible {
     background-attachment: scroll;
   }
 
-  .pane {
+  .home {
     padding: 2rem 1.25rem;
-  }
-
-  .pane--right {
-    display: none;
   }
 
   .page {
